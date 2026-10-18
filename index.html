@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7f1" />
+    <meta name="description" content="A quick, colorful little game of observation. How many matching colors can you find in 30 seconds?" />
+    <title>Color Hunter — Find your color</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Color Hunter home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>color hunter</span>
+        </a>
+        <div class="header-tools">
+          <span class="header-note"><span class="live-dot" aria-hidden="true"></span> A little game for your eyes</span>
+          <div class="accessibility-controls" role="group" aria-label="Display settings">
+            <button class="setting-button" id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+            <button class="setting-button" id="palette-toggle" type="button" aria-pressed="false">Color-blind palette</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="game-intro" aria-labelledby="page-title">
+          <p class="eyebrow">A 30-second color break</p>
+          <h1 id="page-title">Ready, <span>set,</span> spot it.</h1>
+          <p class="intro-copy">Find the matching color. Trust your eyes, beat the clock, and see how high your streak can go.</p>
+        </section>
+
+        <section class="game-layout" aria-label="Color Hunter game">
+          <div class="game-panel">
+            <div class="game-topbar">
+              <div class="round-label"><span class="round-icon" aria-hidden="true">✳</span> COLOR HUNT <span class="round-number" id="round-number">01</span></div>
+              <div class="timer" aria-label="Time remaining"><span class="timer-icon" aria-hidden="true">◷</span><span id="timer">00:30</span></div>
+            </div>
+
+            <div class="hunt-content">
+              <div class="target-area">
+                <div>
+                  <p class="target-label">YOUR TARGET</p>
+                  <p class="target-name" id="target-name">Ready?</p>
+                  <p class="target-hint" id="target-hint">Your color is waiting.</p>
+                </div>
+                <div class="target-swatch" id="target-swatch" aria-label="Target color preview"></div>
+              </div>
+
+              <div class="board-heading">
+                <span>Find its twin</span>
+                <span class="board-tip" id="board-tip">16 colors · 1 match</span>
+              </div>
+              <div class="color-grid" id="color-grid" role="group" aria-label="Choose the matching color">
+                <button class="color-tile" type="button" disabled aria-label="Color tile 1"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 2"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 3"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 4"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 5"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 6"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 7"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 8"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 9"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 10"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 11"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 12"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 13"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 14"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 15"></button>
+                <button class="color-tile" type="button" disabled aria-label="Color tile 16"></button>
+              </div>
+
+              <div class="game-footer">
+                <p class="game-message" id="game-message" role="status" aria-live="polite">Press start when you're ready.</p>
+                <button class="start-button" id="start-button" type="button"><span aria-hidden="true">▶</span> Start hunting</button>
+              </div>
+            </div>
+          </div>
+
+          <aside class="score-panel" aria-label="Your game stats">
+            <div class="score-item score-total">
+              <span class="stat-label">YOUR SCORE</span>
+              <span class="stat-value" id="score">0</span>
+              <span class="stat-caption">points this round</span>
+            </div>
+            <div class="score-divider"></div>
+            <div class="score-item">
+              <span class="stat-label">BEST SCORE</span>
+              <span class="stat-value stat-value-small" id="best-score">0</span>
+            </div>
+            <div class="score-item">
+              <span class="stat-label">CURRENT STREAK</span>
+              <span class="streak-value"><span aria-hidden="true">✳</span> <span id="streak">0</span></span>
+            </div>
+            <div class="score-note"><span aria-hidden="true">✦</span><p>Every match is <strong>10 points.</strong><br />Keep your streak alive.</p></div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="site-footer"><span>Made for curious eyes.</span><span>Take a breath. Find a color.</span></footer>
+    </div>
+  </body>
+</html>
